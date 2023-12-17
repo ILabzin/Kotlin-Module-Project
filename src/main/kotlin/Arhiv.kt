@@ -1,0 +1,1 @@
+class Arhiv(override val name: String, val listofNote : MutableList<Note>): ArhAndNoteName
