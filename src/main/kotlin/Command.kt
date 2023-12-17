@@ -4,13 +4,13 @@ class Command {
         const val NOTE = "заметку"
 
         fun addArhiv() {
-            println("Введите имя нового архива")
+            println("Введите имя нового ${ARH}а")
             var nameOfArhiv: String
             val emptyArhiv: MutableList<Note> = mutableListOf()
             while (true) {
                 nameOfArhiv = readln()
-                if (nameOfArhiv.equals("")) {
-                    println("Имя архива не может быть пустым. Введите название")
+                if (nameOfArhiv.isBlank()) {
+                    println("Имя ${ARH}а не может быть пустым. Введите название")
                 } else {
                     break
                 }
@@ -22,9 +22,16 @@ class Command {
             println("Введите заголовок заметки")
 
             val input = readln()
-            if (!input.equals("")) {
-                println("Напишите заметку")
-                val text = readln()
+            if (!input.isBlank()) {
+                var text :String
+
+                while (true){
+                    println("Напишите $NOTE")
+                    text = readln()
+                    if (text.isBlank()){
+                        println("Заметка не может быть пустой")
+                    } else break
+                }
                 list.add(Note(input, text))
             } else {
                 println("Отмена создания заметки")

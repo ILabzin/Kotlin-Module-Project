@@ -14,7 +14,7 @@ fun showAllNote(oneOfArhive: Arhiv) {
     construct.constructMenu(
             Command.NOTE,
             oneOfArhive.listofNote,
-            onCreate = {end -> println(end) },
+            onCreate = {Command.addNote(oneOfArhive.listofNote) },
             onSelect ={ note -> println((note as Note)) },
             onExit ={ println("Возврат в главное меню \n") })
 
